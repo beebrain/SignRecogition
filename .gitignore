@@ -1,0 +1,5 @@
+25*
+ClassImage_test/*
+ClassImage_train/*
+ClassImage_val/*
+Model_CNN/*
