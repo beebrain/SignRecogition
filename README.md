@@ -7,4 +7,5 @@ How to run
   1.0 Please download the sign image package on Google drive. please followed this link.
   1.1 This script will create the folder of training image, Testing image, and validation image. The training images are contained in ClassImage_train folder, the testing image are contrined in ClassImage_test, and the folder ClassImage_val contain validation image.
   
-2. 
+2. Run CreateModel.py to train the model that will give information about training acc and testing acc. While training will save the parameter that give the best accuracy. The model and weight parameter will save in Model_CNN folder.
+
