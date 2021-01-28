@@ -15,7 +15,9 @@ import pickle
 import RandomHandClass
 import BatchHelper
 import cv2
+import os
 
+FolderSaveModel = "Model_CNN"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 class ConvNetExtract(nn.Module):
     def __init__(self, output_size, dropout_p=0.3):
@@ -115,7 +117,11 @@ if __name__ == "__main__":
     ACC_Max_test = 0
     Average_ACC_test = 0
 
+    #check folder model  is exist.
+    if not os.path.exists("./{}".format(FolderSaveModel)):
+        os.mkdir("./{}".format(FolderSaveModel))
 
+    
     print("totalTime per epoach {}".format(int(totalSample_train/batch_size)))
     for y in range(num_epochs):
         models.train()
@@ -193,7 +199,7 @@ if __name__ == "__main__":
             Average_ACC_test=(ACC / (coutBatch*batch_size))
             print("Test ACC average {}".format(Average_ACC_test))
             print("SaveModel")
-            torch.save(models, "./Model_CNN/CNN_Sign_{:.3f}_T_{:.3f}".format(Average_ACC_val,Average_ACC_test))
+            torch.save(models, "./{}/CNN_Sign_{:.3f}_T_{:.3f}".format(FolderSaveModel,Average_ACC_val,Average_ACC_test))
             ACC_Max_test = Average_ACC_test
             print("Save Completed")
 
