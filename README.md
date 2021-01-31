@@ -1,6 +1,6 @@
 # SignRecogition
 This is a Sign Recognition(SR) State in paper ... and ...
-This code will train and test a signing image with CNN. It save the model automatically.
+This code will train and test a signing image with CNN. It save the best model automatically.
 
 How to run
 1. Run RandomHandclass.py file to unpack the training dataset and testing dataset.
